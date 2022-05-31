@@ -26,7 +26,6 @@ struct block
 {
     pthread_t car;
     bool available;
-    int ticket;
 };
 
 struct road
@@ -38,8 +37,6 @@ struct road
     enum direction dir;
     struct block *blocks;
     pthread_mutex_t lock;
-
-    pthread_mutex_t tktLock;
 };
 
 void initRoad(struct road *roadPtr, unsigned size, unsigned dir) {
